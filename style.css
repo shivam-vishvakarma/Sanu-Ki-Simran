@@ -1,0 +1,178 @@
+@font-face {
+  font-family: hand;
+  src: url("./public/Kalam/Kalam-Light.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: hand;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+section {
+  position: relative;
+  display: grid;
+  place-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./public/book.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.card {
+  position: absolute;
+  display: grid;
+  place-content: center;
+  width: 200px;
+  height: 300px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.123);
+  background-image: url("./public/paper.avif");
+  background-position: center;
+  background-size: cover;
+  transform-origin: 0 0;
+}
+
+.card > p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.card > img {
+  margin: auto;
+  width: 80%;
+  mix-blend-mode: multiply;
+  filter: opacity(0.8) contrast(0.9) brightness(1.2);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.123);
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover > img {
+  position: absolute;
+  width: 80vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: none;
+  mix-blend-mode: normal;
+  z-index: 15;
+}
+
+.c1 > p {
+  font-size: 40px;
+}
+
+.c1 {
+  z-index: 10;
+}
+.c2 {
+  transform: rotate(-5deg) translate(-50%, -50%);
+  z-index: 9;
+}
+.c3 {
+  transform: rotate(10deg) translate(-50%, -50%);
+  z-index: 8;
+}
+.c4 {
+  transform: rotate(-10deg) translate(-50%, -50%);
+  z-index: 7;
+}
+.c5 {
+  z-index: 6;
+}
+.c6 {
+  transform: rotate(-5deg) translate(-50%, -50%);
+  z-index: 5;
+}
+.c7 {
+  transform: rotate(5deg) translate(-50%, -50%);
+  z-index: 4;
+}
+.c8 {
+  transform: rotate(-10deg) translate(-50%, -50%);
+  z-index: 3;
+}
+.c9 {
+  transform: rotate(10deg) translate(-50%, -50%);
+  z-index: 2;
+}
+
+.heart {
+  scale: 0.9;
+  padding-left: 30px;
+  z-index: 0;
+}
+
+.last-img {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 24px; /* pathのサイズ */
+  height: 24px; /* pathのサイズ */
+  background: #ff5252; /* 色 */
+  clip-path: path(
+    "M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z"
+  );
+  transform: scale(0);
+}
+
+.last-img img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+button {
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 5%;
+  right: 5%;
+  background: wheat;
+  border: none;
+  border-radius: 9999px;
+}
+
+@media (max-width: 480px) {
+  .heart {
+    scale: 0.7;
+  }
+  .card {
+    padding: 10px;
+    width: 150px;
+    height: 200px;
+  }
+  .card > p {
+    font-size: 15px;
+  }
+  .c1 > p {
+    font-size: 25px;
+  }
+  .card > img {
+    width: 70%;
+  }
+  .card:hover > img {
+    width: 200vw;
+    z-index: 11;
+  }
+  .last-img {
+    top: 46%;
+  }
+  button {
+    right: 10%;
+    bottom: 10%;
+  }
+}
